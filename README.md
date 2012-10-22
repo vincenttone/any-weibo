@@ -3,6 +3,7 @@
 - windows、linux、osx
 - ruby1.9
 - ruby-gnome2
+
 # Todo
 - 多人登录
 - 异常处理
