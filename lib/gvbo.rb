@@ -292,7 +292,7 @@ class GVbo
       label.wrap=true
       label.selectable = true
       label.width_chars = 70
-      
+
       weibo_detail_url = 'http://api.t.sina.com.cn/' + t['uid'] + '/statuses/' + t['id']
       
       line = ''
@@ -336,17 +336,17 @@ class GVbo
       
       #del tweet button
       if @v.uid.to_s == t['uid'].to_s
-          del_button = Gtk::Button.new
-          del_label = Gtk::Label.new '删除'
-          del_button.add_child Gtk::Builder.new, del_label
-          del_button.modify_bg Gtk::STATE_NORMAL, Gdk::Color.parse('red')
-          del_label.modify_fg Gtk::STATE_NORMAL, Gdk::Color.parse('white')
-          del_label.modify_fg Gtk::STATE_PRELIGHT, Gdk::Color.parse('red')
+        del_button = Gtk::Button.new
+        del_label = Gtk::Label.new '删除'
+        del_button.add_child Gtk::Builder.new, del_label
+        del_button.modify_bg Gtk::STATE_NORMAL, Gdk::Color.parse('red')
+        del_label.modify_fg Gtk::STATE_NORMAL, Gdk::Color.parse('white')
+        del_label.modify_fg Gtk::STATE_PRELIGHT, Gdk::Color.parse('red')
           
-          del_button.signal_connect 'clicked' do
-            @v.statuses_destroy t['id']
-            refresh_line
-          end
+        del_button.signal_connect 'clicked' do
+          @v.statuses_destroy t['id']
+          refresh_line
+        end
 
         more_table.attach del_button, 5, 6, 0, 1
       end
@@ -393,13 +393,11 @@ class GVbo
         refresh_line
       end
 
-      
       more_table.attach time_label, 0, 2, 0, 1
       more_table.attach comment_button, 2, 3, 0, 1
       more_table.attach retweet_button, 3, 4, 0, 1
       more_table.attach reit_button, 4, 5, 0, 1
       more_table.attach more_label, 6, 7, 0, 1
-      
 
       more_table.show_all
 
